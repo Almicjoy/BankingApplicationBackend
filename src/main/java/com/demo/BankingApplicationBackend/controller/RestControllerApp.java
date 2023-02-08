@@ -25,7 +25,7 @@ public class RestControllerApp {
 	@Autowired
 	CustomerService customerService;
 	
-	@PostMapping("/create")
+	@PostMapping("/api/customer/register")
 	public Customer createEmployee(@RequestBody Customer c) {
 		return customerService.insertCustomer(c);
 	}
@@ -35,7 +35,7 @@ public class RestControllerApp {
 		return customerService.fetchCustomerById(id);
 	}
 	
-	@GetMapping("/findAllECustomers")
+	@GetMapping("/findAllCustomers")
 	public List<Customer> findAllCustomers() {
 		return customerService.fetchAllCustomers();
 	}
